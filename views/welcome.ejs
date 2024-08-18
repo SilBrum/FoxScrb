@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome - FoxScrb</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <%- include('navbar.ejs') %>
+
+  <!-- main content -->
+
+  <div class="container text-center mt-5">
+    <h1>Welcome to FoxScrb</h1>
+    <p>Welcome to FoxScrb, the ultimate note-taking app designed for those who value simplicity and efficiency</p>
+    <a href="/users/login" class="btn main-btns">Get Started</a>
+  </div>
+  <div class="welcome-page-image">
+    <img src="/images/main-image.png" alt="Computer displaying app" class="welcome-image">
+  </div>
+  <div class="intro-section">
+    <div class="intro-image">
+      <img src="/images/second-image.png" alt="Phone displaying the Foxscrib app">
+    </div>
+    <div class="intro-text">
+      <h1>Why FoxScrb?</h1>
+      <p>FoxScrb is designed for those who don't want to waste time organizing their notes. It's easy to use and makes searching for your notes quick and effortless. Get started today and experience the simplicity of managing your thoughts.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container text-center">
+    <h2>Get in Touch</h2>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/_silbrum/?hl=en" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://github.com/SilBrum" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/sicilia-brum/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

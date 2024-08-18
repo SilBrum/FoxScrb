@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes - FoxScrb</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <%- include('navbar_login.ejs') %>
+
+<div class="container">
+  <h1>Profile Management</h1>
+
+  <!-- Profile Update Form -->
+  <form action="/profile" method="POST" enctype="multipart/form-data" class="form-group">
+    <div class="form-group">
+      <label for="profilePicture">Profile Picture</label><br>
+      <img src="<%= user.profilePicture %>" alt="Profile Picture" class="rounded-square-logo"><br>
+      <input type="file" name="profilePicture" id="profilePicture">
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value="<%= user.name %>" class="form-control">
+    </div>
+    <button type="submit" class="main-btns">Update Profile</button>
+  </form>
+
+  <h2>Change Password</h2>
+
+  <form id="change-password-form" action="/profile/change-password" method="POST" class="form-group" onsubmit="return confirmPasswordChange()">
+    <div class="form-group">
+      <label for="password">New Password</label>
+      <input type="password" name="password" id="password" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="passwordConfirm">Confirm New Password</label>
+      <input type="password" name="passwordConfirm" id="passwordConfirm" required class="form-control">
+    </div>
+    <button type="submit" class="main-btns">Change Password</button>
+  </form>
+
+  <% if (typeof successMessage !== 'undefined') { %>
+    <p style="color: green;"><%= successMessage %></p>
+  <% } %>
+  <% if (typeof errorMessage !== 'undefined') { %>
+    <p style="color: red;"><%= errorMessage %></p>
+  <% } %>
+</div>
+
+<script>
+  function confirmPasswordChange() {
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordConfirm').value;
+    
+    if (password !== passwordConfirm) {
+      alert('Passwords do not match.');
+      return false;
+    }
+
+    return confirm('Are you sure you want to change your password?');
+  }
+</script>

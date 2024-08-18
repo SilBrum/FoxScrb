@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Note - FoxScrb</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <%- include('navbar_login.ejs') %>
+
+<h1>Archived Notes</h1>
+
+
+<div class="notes-container">
+  <% notes.forEach(function(note) { %>
+    <div class="note-box">
+      <div class="note-title"><%= note.title %></div>
+      <div class="note-content"><%= note.body.replace(/<[^>]*>/g, '').substring(0, 25) %>...</div>
+      <div class="note-actions mt-3">
+        <form action="/notes/unarchive/<%= note._id %>?_method=POST" method="POST" style="display: inline;">
+          <button type="submit" class="archive-icon">
+            <i class="fa-solid fa-folder-open"></i> 
+          </button>
+        </form>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+<div class="button-container">
+  <a href="/notes" class="btn main-btns">Back</a>
+  </div>
