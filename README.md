@@ -42,7 +42,29 @@ Before you begin, ensure you have the following installed on your system:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/FoxScrb.git
+git clone https://github.com/SilBrum/FoxScrb.git
 cd FoxScrb
+```
+
+
+## Install dependencies:
+```bash
+npm install express mongoose express-session connect-flash passport method-override ejs
+
+```
+
+## Start the application:
+
+```bash
+npm start
+```
+### Open your browser and navigate to http://localhost:5000.
+
+
+##License
+This project is licensed under the MIT License.
+
+
+
 
 
